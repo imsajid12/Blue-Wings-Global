@@ -3,7 +3,7 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $message = $_POST['message'];
 $subject = 'New email from contact form';
-header('Content-Type: application/json');
+
 if ($name === ''){
 print json_encode(array('message' => 'Name cannot be empty', 'code' => 0));
 exit();
@@ -24,7 +24,7 @@ exit();
 $content="From: $name \nEmail: $email \nMessage: $message";
 $recipient = "ansarisajid765@gmail.com";
 $mailheader = "From: $email \r\n";
-mail($recipient, $subject, $content, $mailheader) or die("Error!");
+mail($recipient, $subject, $content, $mailheader) or die("ERRORS!");
 print json_encode(array('message' => 'Email successfully sent!', 'code' => 1));
 exit();
 ?>
