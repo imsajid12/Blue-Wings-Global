@@ -1,10 +1,17 @@
+:root {
+  --primary-color: #3C84DC;
+  --secondary-color: #1F61B1;
+  --silversand: #C3C4C4;
+  --woodsmoke: #0A0B0B;
+}
+
 body {
   overflow-x: hidden;
   font-size: 1.2rem;
 }
 
 .primary-overlay {
-  background: rgba(0, 48, 43, 0.8);
+  background: rgba(10, 11, 11, 0.8);
   position: absolute;
   top: 0;
   left: 0;
@@ -12,12 +19,17 @@ body {
   height: 100%; }
 
 .navbar {
-  box-shadow: 2px 2px 5px #009688;
+  box-shadow: 2px 2px 5px var(--secondary-color);
   opacity: .9;
   background: #fff; }
   .navbar .nav-item {
     font-size: 1.4rem;
     padding-right: 1.4rem; }
+
+.navbar a:hover {
+  background-color: var(--primary-color);
+  border-radius: 2rem;
+}
 
 
 #showcase .carousel-item {
@@ -39,6 +51,9 @@ body {
     transform-style: preserve-3d;
   }
 
+#newsletter {
+  background-color: var(--silversand) !important;
+}
 #services .card {
   height: 200px; }
 
@@ -49,15 +64,26 @@ body {
 .info-header {
   width: 50%;
   margin: auto;
-  border-bottom: 1px #ddd solid; }
+  border-bottom: 1px var(--silversand) solid; }
+
+
+#about-us {
+  margin: auto;
+  padding: auto;
+  font-size: 1.4rem;
+} 
 
 #founders img {
   margin-top: -50px; }
 #founders .card:hover {
-  background: #009688;
+  background: var(--secondary-color);
   color: #fff; }
   #founders .card:hover .fab {
     color: white; }
+
+#main-footer {
+  background-color: var(--secondary-color);
+}
 
 #main-footer .fab {
   color: white !important; }
@@ -73,9 +99,23 @@ body {
 .showcasebelow410 {
   display: none; }
 
+#contact-details a {
+  text-decoration: underline;
+  color: var(--woodsmoke);
+}
+
 @media screen and (max-width: 768px) {
   #brand-name {
     font-size: 1rem; }
+
+  #about-us {
+    font-style: italic;
+    font-size: 1rem;
+  }
+
+  #founders-card {
+    margin-top: 1.2rem !important;
+  }
 
   #iec {
     display: none; }
