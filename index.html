@@ -516,9 +516,9 @@ data-width="560">
                             <textarea rows="5" name="message" class="form-control" placeholder="Message" data-error="Please, leave us a message." required></textarea>
                         </div>
 
-                        
+                        <input onclick="validateForm();" name="submit" type="submit" value="Send Message" class="btn btn-primary btn-block btn-lg">
                     </form>
-                    <input onclick="validateForm();" name="submit" type="submit" value="Send Message" class="btn btn-primary btn-block btn-lg">
+                    
                     <div class="status"></div>
                 </div>
 
@@ -656,6 +656,7 @@ data-width="560">
     <script>
         //Contact form validation
 function validateForm() {
+    alert(1);
     document.getElementById('status').innerHTML = "Sending...";
     formData = {
     'name'     : $('input[name=name]').val(),
