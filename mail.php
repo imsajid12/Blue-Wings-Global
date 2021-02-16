@@ -1,8 +1,11 @@
 <?php
+if(isset($_POST['submit'])) {
 $name = $_POST['name'];
 $email = $_POST['email'];
 $message = $_POST['message'];
 $subject = 'New email from contact form';
+}
+
 
 if ($name === ''){
 print json_encode(array('message' => 'Name cannot be empty', 'code' => 0));
@@ -21,10 +24,14 @@ if ($message === ''){
 print json_encode(array('message' => 'Message cannot be empty', 'code' => 0));
 exit();
 }
-$content="From: $name \nEmail: $email \nMessage: $message";
+
+//$content ="From: $name \nEmail: $email \nMessage: $message";
 $recipient = "ansarisajid765@gmail.com";
-$mailheader = "From: $email \r\n";
-mail($recipient, $subject, $content, $mailheader) or die("ERRORS!");
+$mailheader = "From: ".$email;
+$txt = "You have received an email from ".$name.".\n\n".$message;
+
+mail($recipient, $subject, $txt, $mailheader) or die("ERRORS!");
+header('Content-Type: application/json');
 print json_encode(array('message' => 'Email successfully sent!', 'code' => 1));
 exit();
 ?>
