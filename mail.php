@@ -31,7 +31,7 @@ $mailheader = "From: ".$email;
 $txt = "You have received an email from ".$name.".\n\n".$message;
 
 mail($recipient, $subject, $txt, $mailheader) or die("ERRORS!");
-header('Content-Type: application/json');
+header("Location: index.html?mailsend");
 print json_encode(array('message' => 'Email successfully sent!', 'code' => 1));
 exit();
 ?>
