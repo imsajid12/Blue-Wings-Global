@@ -2,7 +2,7 @@
 $name = $_POST['name'];
 $email = $_POST['email'];
 $message = $_POST['message'];
-$subject = "New email from contact form";
+$subject = 'New email from contact form';
 header('Content-Type: application/json');
 if ($name === ''){
 print json_encode(array('message' => 'Name cannot be empty', 'code' => 0));
@@ -16,10 +16,6 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
 print json_encode(array('message' => 'Email format invalid.', 'code' => 0));
 exit();
 }
-}
-if ($subject === ''){
-print json_encode(array('message' => 'Subject cannot be empty', 'code' => 0));
-exit();
 }
 if ($message === ''){
 print json_encode(array('message' => 'Message cannot be empty', 'code' => 0));
