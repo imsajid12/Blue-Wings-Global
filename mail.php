@@ -4,7 +4,7 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $message = $_POST['message'];
 $subject = 'New email from contact form';
-}
+
 
 
 if ($name === ''){
@@ -34,4 +34,5 @@ mail($recipient, $subject, $txt, $mailheader) or die("ERRORS!");
 header("Location: index.html?mailsend");
 print json_encode(array('message' => 'Email successfully sent!', 'code' => 1));
 exit();
+}
 ?>
