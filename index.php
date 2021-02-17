@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
         integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="img/favicon-32x32.png">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -161,18 +163,18 @@
                 <div id="founders-card" class="col-md-5">
                     <div  class="card">
                         <div class="card-body">
-                            <img src="img/person4.jpg" alt="" class="img-fluid rounded-circle w-50 mb-3">
+                            <img src="img/person.jpg" alt="" class="img-fluid rounded-circle w-50 mb-3">
                             <h3>Ankit Narendra Sharma</h3>
-                            <h5 class="text-muted">CEO & Co-Founder</h5>
+                            <h5 class="text-muted">Director</h5>
                             <ul class="list-unstyled">
-                                <li>A young and enthusiastic Entrepreneur..</li>
+                                <li>A young and enthusiastic Entrepreneur</li>
                                 <li>MBA by Qualification.</li>
                                 <li>Having Experience of sales in various industries like Insurance,Cosmetics,FMCG,Foods
                                     and Processing.</li>
                             </ul>
                             <div class="d-flex justify-content-center">
                                 <div class="p-4">
-                                    <a href="https://www.facebook.com/Bluewings.Global/" target="_blank">
+                                    <a href="https://www.facebook.com/profile.php?id=100006497943599" target="_blank">
                                         <i class="fab fa-facebook"></i>
                                     </a>
                                 </div>
@@ -182,7 +184,7 @@
                                     </a>
                                 </div>
                                 <div class="p-4">
-                                    <a href="https://www.linkedin.com/company/bluewingsconsulants/">
+                                    <a href="https://www.linkedin.com/in/ankit-sharma-94474a136">
                                         <i class="fab fa-linkedin" target="_blank"></i>
                                     </a>
                                 </div>
@@ -479,23 +481,83 @@ data-width="560">
     
 
     <!-- CONTACT -->
+    <?php
+        $msg = '';
+        $msgClass = '';
+
+        //Check for submit
+        if(filter_has_var(INPUT_POST, 'submit')){
+        //submit the form
+        $name = htmlspecialchars($_POST['name']);
+        $email = htmlspecialchars($_POST['email']);
+        $message = htmlspecialchars($_POST['message']);
+
+        //Check Required fields
+        if(!empty($email) && !empty($name) && !empty($message)) {
+            //PASSED
+            //Check email
+            if(filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+                //Failed
+                $msg = "Please enter a valid email";
+                $msgClass = "alert-danger";
+            } else {
+                //PASSED
+                $to = "ansarisajid765@gmail.com";
+                $subject = "Contact request from ".$name;
+                $body = '<h2>Contact Request</h2>
+                        <h4>Name : </h4><p>'.$name.'</p>
+                        <h4>Email : </h4><p>'.$email.'</p>
+                        <h4>Message : </h4><p>'.$message.'</p>
+                        ';
+
+                //Email Headers
+                $headers = "MIME-Version: 1.0"."\r\n";
+                $headers .= "Content-Type:text/html;charset=UTF-8"."\r\n";
+
+                //Additional headers
+                $headers .= "From: ".$name. "<".$email.">"."\r\n";
+
+                if(mail($to, $subject, $body, $headers)) {
+                    //Email Sent
+                    $msg = "You email has been sent";
+                    $msgClass = "alert-sucess";
+                }else {
+                    //Email Not Sent
+                    $msg = "You email was not sent";
+                    $msgClass = "alert-danger";
+                }
+            }
+
+        } else {
+            //Failed
+            $msg = "Please fill in all fields";
+            $msgClass = "alert-danger";
+        }
+        }
+
+    ?>
+
     <section id="contact" class="bg-light py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 mb-resp">
                     <h3 class="text-dark">Get In Touch</h3>
                     <p class="lead">Please fill the form to get in touch with us.</p>
-                    <form id="contact-form" action="mail.php" method="POST">
 
-                        <div class="messages"></div>
-
+                    <?php if($msg != ''): ?>
+                        <div class="alert <?php echo $msgClass; ?>">
+                            <?php echo $msg ?>
+                        </div>
+                    <?php endif ?>
+                    
+                    <form id="contact-form" action="index.php" method="POST">
                         <div class="input-group input-group-lg mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
                                     <i class="fas fa-user"></i>
                                 </span>
                             </div>
-                            <input type="text" class="form-control" name="name" placeholder="Name" required data-error="Name is required.">
+                            <input type="text" class="form-control" name="name" placeholder="Name" required data-error="Name is required." value="<?php echo isset($_POST['name']) ? $name : ''; ?>">
                         </div>
 
                         <div class="input-group input-group-lg mb-3">
@@ -504,7 +566,7 @@ data-width="560">
                                     <i class="fas fa-envelope"></i>
                                 </span>
                             </div>
-                            <input type="email" class="form-control" name="email" placeholder="Email" data-error="Valid email is required." required>
+                            <input type="email" class="form-control" name="email" placeholder="Email" data-error="Valid email is required." required value="<?php echo isset($_POST['email']) ? $email : ''; ?>">
                         </div>
 
                         <div class="input-group input-group-lg mb-3">
@@ -513,7 +575,9 @@ data-width="560">
                                     <i class="fas fa-pencil-alt"></i>
                                 </span>
                             </div>
-                            <textarea rows="5" name="message" class="form-control" placeholder="Message" data-error="Please, leave us a message." required></textarea>
+                            <textarea rows="5" class="form-control" name="message" placeholder="Message" data-error="Please, leave us a message." required>
+                                <?php echo isset($_POST['message']) ? $message : ''; ?>"
+                            </textarea>
                         </div>
 
                         <input name="submit" type="submit" value="Send Message" class="btn btn-primary btn-block btn-lg">
@@ -654,56 +718,6 @@ data-width="560">
     
 
     <script>
-        //Contact form validation
-function validateForm() {
-    alert(1);
-    document.getElementById('status').innerHTML = "Sending...";
-    formData = {
-    'name'     : $('input[name=name]').val(),
-    'email'    : $('input[name=email]').val(),
-    'message'  : $('textarea[name=message]').val()
-    };
-    
-    
-    $.ajax({
-    url : "mail.php",
-    type: "POST",
-    data : formData,
-    success: function(data, textStatus, jqXHR)
-    {
-    
-    $('#status').text(data.message);
-    if (data.code) //If mail was sent successfully, reset the form.
-    $('#contact-form').closest('form').find("input[type=text], textarea").val("");
-    },
-    error: function (jqXHR, textStatus, errorThrown)
-    {
-    $('#status').text(jqXHR);
-    }
-    });
-    
-    // Get the current year for the copyright
-    $('#year').text(new Date().getFullYear());
-    
-    // Init Scrollspy
-    $('body').scrollspy({ target: '#main-nav' });
-    
-    // Smooth Scrolling
-    $("#main-nav a").on('click', function (event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-    
-            const hash = this.hash;
-    
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 800, function () {
-    
-                window.location.hash = hash;
-            });
-        }
-    });
-}
         //Carousel just below navbar
         $('body').css('padding-top', $('.navbar').outerHeight());
 
