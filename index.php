@@ -521,7 +521,7 @@ data-width="560">
                     //Email Sent
                     $msg = "You email has been sent";
                     $msgClass = "alert-sucess";
-                }else {
+                } else {
                     //Email Not Sent
                     $msg = "You email was not sent";
                     $msgClass = "alert-danger";
@@ -557,7 +557,7 @@ data-width="560">
                                     <i class="fas fa-user"></i>
                                 </span>
                             </div>
-                            <input type="text" class="form-control" name="name" placeholder="Name" required data-error="Name is required." value="<?php echo isset($_POST['name']) ? $name : ''; ?>">
+                            <input type="text" class="form-control" name="name" placeholder="Name" value="<?php echo isset($_POST['name']) ? $name : ''; ?>">
                         </div>
 
                         <div class="input-group input-group-lg mb-3">
@@ -566,7 +566,7 @@ data-width="560">
                                     <i class="fas fa-envelope"></i>
                                 </span>
                             </div>
-                            <input type="email" class="form-control" name="email" placeholder="Email" data-error="Valid email is required." required value="<?php echo isset($_POST['email']) ? $email : ''; ?>">
+                            <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo isset($_POST['email']) ? $email : ''; ?>">
                         </div>
 
                         <div class="input-group input-group-lg mb-3">
@@ -575,8 +575,8 @@ data-width="560">
                                     <i class="fas fa-pencil-alt"></i>
                                 </span>
                             </div>
-                            <textarea rows="5" class="form-control" name="message" placeholder="Message" data-error="Please, leave us a message." required>
-                                <?php echo isset($_POST['message']) ? $message : ''; ?>"
+                            <textarea rows="5" class="form-control" name="message" placeholder="Message">
+                                <?php echo isset($_POST['message']) ? $message : ''; ?>
                             </textarea>
                         </div>
 
