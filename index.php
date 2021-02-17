@@ -550,7 +550,7 @@ data-width="560">
                         </div>
                     <?php endif ?>
                     
-                    <form id="contact-form" action="index.php" method="POST">
+                    <form id="contact-form" action="index.php#contact" method="POST">
                         <div class="input-group input-group-lg mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
