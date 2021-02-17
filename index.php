@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Blue Wings Global</title>
+    <meta name="description" content="BlueWings Global is a transportation and logistic startup, founded by Ankit Sharma.BlueWings Global transports various kinds of goods such as Textile, Agro Products, Spices and Tea, Granites & Marbles, Office Bags and Backpags. We deliver consignment all around the globle as we in PAN India.">
 </head>
 
 <body id="home" data-spy="scroll" data-target="#main-nav">
@@ -22,15 +23,15 @@
     <nav class="navbar navbar-expand-xl  navbar-light fixed-top py-4" id="main-nav">
         <div class="container">
             <a href="#home" class="navbar-brand">
-                <img src="img/logo.png" height="50" width="50" alt="">
-                <h3 class="d-inline align-middle" id="brand-name">Blue Wings Global</h3>
+                <img src="img/logo.jpg" height="50" width="50" alt="">
+                <img src="img/brandname.png" height="50" width="150" class=" ">
             </a>
 
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ml-auto">
+                <ul id="menu-items" class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a href="#home" class="nav-link">Home</a>
                     </li>
@@ -38,10 +39,7 @@
                         <a href="#newsletter" class="nav-link">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#products" class="nav-link">Products We Trade</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#image-grid" class="nav-link">Gallery</a>
+                        <a href="#products" class="nav-link">Products</a>
                     </li>
                     <li class="nav-item">
                         <a href="#contact" class="nav-link">Contact Us</a>
@@ -149,7 +147,7 @@
     </section>
 
     <!-- About US -->
-    <section id="founders" class="py-5 text-center">
+    <section id="founders" class="py-5 text-center bg-light">
         <div class="container">
             <div class="row">
                 <div id="about-us" class="col-md-7">
@@ -179,8 +177,8 @@
                                     </a>
                                 </div>
                                 <div class="p-4">
-                                    <a href="http://twitter.com">
-                                        <i class="fab fa-twitter" target="_blank"></i>
+                                    <a href="https://www.instagram.com/bluewings_global/?igshid=1qmzzpp7yokqe">
+                                        <i class="fab fa-instagram" target="_blank"></i>
                                     </a>
                                 </div>
                                 <div class="p-4">
@@ -244,7 +242,7 @@
 -->
 
     <!-- PRODUCTS -->
-    <section id="products" class="py-5 text-center bg-light">
+    <section id="products" class="py-5 text-center">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -260,10 +258,10 @@
                     <div class="shadow-lg card rounded shadow-sm h-100 border-0">
                         <a href="img/product1.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560"
                             data-width="560">
-                            <img src="img/product1.jpg" alt="Textile Manufacturing" class="img-fluid card-img-top">
+                            <img src="img/product1.jpg" alt="Image of raw fabrics" class="img-fluid card-img-top">
                         </a>
                         <div class="card-body">
-                            <h4 class="text-dark">Textile Manufacturing</h4>
+                            <h4 class="text-dark">Textile</h4>
                             <p class="small text-muted font-italic">We manufacture high-quality fabrics with innovative designs in the heart of Surat with an experience of more than two decades. We also assist in taking textile businesses to the next level by offering our unmatched services at Blue Wings.</p>
                         </div>
                     </div>
@@ -284,7 +282,7 @@
                     <div class="shadow-lg card rounded shadow-sm h-100 border-0">
                         <a href="img/product3.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560"
                             data-width="560">
-                            <img src="img/product3.jpg" alt="Spices" class="img-fluid card-img-top">
+                            <img src="img/product3.jpg" alt="Jars of Chilli, Turmeric & Corriander Powder" class="img-fluid card-img-top">
                         </a>
                         <div class="card-body">
                             <h4 class="text-dark">Spices & Tea</h4>
@@ -292,11 +290,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
+                <div class="col-md-6 mb-3">
                     <div class="shadow-lg card rounded shadow-sm h-100 border-0">
-                        <a href="img/product4.jpeg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560"
+                        <a href="img/product4.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560"
                             data-width="560">
-                            <img src="img/product4.jpeg" alt="Granite" class="img-fluid card-img-top">
+                            <img src="img/product4.jpg" alt="Images of Granite Tiles" class="img-fluid card-img-top">
                         </a>
                         <div class="card-body">
                             <h4 class="text-dark">Granite and Marble</h4>
@@ -304,11 +302,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
+                <div class="col-md-6 mb-3">
                     <div class="shadow-lg card rounded shadow-sm h-100 border-0">
                         <a href="img/product5.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560"
                             data-width="560">
-                            <img src="img/product5.jpg" alt="Backpacks and Office Bags" class="img-fluid card-img-top">
+                            <img src="img/product5.jpg" alt="Image of school bags & bagpacks" class="img-fluid card-img-top">
                         </a>
                         <div class="card-body">
                             <h4 class="text-dark">Backpacks and Office Bags</h4>
@@ -325,12 +323,12 @@
     </section>
 
     <!-- Image Grid of Products -->
-    <section id="image-grid">
+    <!-- <section id="image-grid">
         <div class="container my-4">
-            <!--Grid row-->
+            
             <div class="row">
         
-              <!--Grid column-->
+              
               <div class="col-lg-4 col-md-12 mb-4">
                 <a href="img/rice.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560"
                             data-width="560">
@@ -352,9 +350,9 @@
                 <img src="img/garments1.jpeg" class="shadow bg-dark img-fluid mb-4" alt="">
                 </a>
               </div>
-              <!--Grid column-->
+              
         
-              <!--Grid column-->
+              
               <div class="col-lg-4 col-md-6 mb-4">
                 <a href="img/spices1.jpg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560"
                             data-width="560">
@@ -376,9 +374,9 @@ data-width="560">
 
 
               </div>
-              <!--Grid column-->
+              
         
-              <!--Grid column-->
+              
               <div class="col-lg-4 col-md-6 mb-4">
                 <a href="img/jewellery2.jpeg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560"
                             data-width="560">
@@ -393,7 +391,8 @@ data-width="560">
               </div>
         
           </div>
-    </section>
+    </section> -->
+
 
     <!-- FOUNDERS -->
     <!--
@@ -557,7 +556,7 @@ data-width="560">
                                     <i class="fas fa-user"></i>
                                 </span>
                             </div>
-                            <input type="text" class="form-control" name="name" placeholder="Name" value="<?php echo isset($_POST['name']) ? $name : ''; ?>">
+                            <input type="text" class="form-control" name="name" placeholder="Name">
                         </div>
 
                         <div class="input-group input-group-lg mb-3">
@@ -566,7 +565,7 @@ data-width="560">
                                     <i class="fas fa-envelope"></i>
                                 </span>
                             </div>
-                            <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo isset($_POST['email']) ? $email : ''; ?>">
+                            <input type="email" class="form-control" name="email" placeholder="Email">
                         </div>
 
                         <div class="input-group input-group-lg mb-3">
@@ -576,7 +575,6 @@ data-width="560">
                                 </span>
                             </div>
                             <textarea rows="5" class="form-control" name="message" placeholder="Message">
-                                <?php echo isset($_POST['message']) ? $message : ''; ?>
                             </textarea>
                         </div>
 
@@ -610,8 +608,8 @@ data-width="560">
                             </a>
                         </div>
                         <div class="p-4">
-                            <a href="http://twitter.com" target="_blank">
-                                <i class="fab fa-twitter fa-4x"></i>
+                            <a href="https://www.instagram.com/bluewings_global/?igshid=1qmzzpp7yokqe" target="_blank">
+                                <i class="fab fa-instagram fa-4x"></i>
                             </a>
                         </div>
                         <div class="p-4">
@@ -634,8 +632,8 @@ data-width="560">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-12">
-                    <img src="img/logo.png" alt="Logo" class="img-fluid">
-                    <h3 class="text-center">Blue Wings Gloabal</h3>
+                    <img src="img/logo.jpg" alt="BlueWings Logo" class="img-fluid mx-auto d-block">
+                    <img src="img/footerbrandname.png" class="img-fluid mx-auto d-block">
                     <h5 class="text-center bg-dark p-1">IEC : <span>HHMPS9929C</span></h5>
 
                     <div class="d-flex justify-content-center">
@@ -645,8 +643,8 @@ data-width="560">
                             </a>
                         </div>
                         <div class="p-4">
-                            <a href="http://twitter.com" target="_blank">
-                                <i class="fab fa-twitter fa-3x"></i>
+                            <a href="https://www.instagram.com/bluewings_global/?igshid=1qmzzpp7yokqe" target="_blank">
+                                <i class="fab fa-instagram fa-3x"></i>
                             </a>
                         </div>
                         <div class="p-4">
@@ -670,9 +668,9 @@ data-width="560">
                 </div>
             -->
                 <div class="col-lg-4 col-md-6">
-                    <h4 class="text-dark">Products We Trade</h4>
+                    <a href="#products"><h4 class="text-dark">Products</h4></a>
                     <ul class="list-unstyled">
-                        <li>Textile Manufacturing</li>
+                        <li>Textile</li>
                         <li>Agro Products</li>
                         <li>Spices & Tea</li>
                         <li>Granite & Marble</li>

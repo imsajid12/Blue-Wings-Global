@@ -30,7 +30,7 @@ body {
     font-size: 1.4rem;
     padding-right: 1.4rem; }
 
-.navbar li:hover {
+#menu-items a:hover {
   background-color: var(--primary-color);
   border-radius: 2rem;
 }
@@ -112,7 +112,7 @@ body {
   #brand-name {
     font-size: 1rem; }
 
-  #about-us {
+  #about-us p{
     font-style: italic;
     font-size: 1rem;
   }
