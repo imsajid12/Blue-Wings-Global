@@ -502,7 +502,7 @@ data-width="560">
                 $msgClass = "alert-danger";
             } else {
                 //PASSED
-                $to = "ansarisajid765@gmail.com";
+                $to = "imsajid12@gmail.com";
                 $subject = "Contact request from ".$name;
                 $body = '<h2>Contact Request</h2>
                         <h4>Name : </h4><p>'.$name.'</p>
@@ -520,7 +520,7 @@ data-width="560">
                 if(mail($to, $subject, $body, $headers)) {
                     //Email Sent
                     $msg = "You email has been sent";
-                    $msgClass = "alert-sucess";
+                    $msgClass = "alert-success";
                 } else {
                     //Email Not Sent
                     $msg = "You email was not sent";
