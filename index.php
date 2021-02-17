@@ -482,10 +482,6 @@ data-width="560">
 
     <!-- CONTACT -->
     <?php
-        ini_set( 'sendmail_from', "myself@my.com" ); 
-        ini_set( 'SMTP', "mail.bigpond.com" );  
-        ini_set( 'smtp_port', 25 );
-
         $msg = '';
         $msgClass = '';
 
@@ -549,7 +545,7 @@ data-width="560">
                     <p class="lead">Please fill the form to get in touch with us.</p>
 
                     <?php if($msg != ''): ?>
-                        <div class="alert <?php echo $msgClass; ?>">
+                        <div id="alert" class="alert <?php echo $msgClass; ?>">
                             <?php echo $msg ?>
                         </div>
                     <?php endif ?>
@@ -722,6 +718,13 @@ data-width="560">
     
 
     <script>
+        //Closing alert after 3seconds
+        setTimeout(function () { 
+  
+        // Closing the alert 
+         $('#alert').alert('close'); 
+        }, 3000);
+
         //Carousel just below navbar
         $('body').css('padding-top', $('.navbar').outerHeight());
 
