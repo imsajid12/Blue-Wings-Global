@@ -482,6 +482,10 @@ data-width="560">
 
     <!-- CONTACT -->
     <?php
+        ini_set( 'sendmail_from', "myself@my.com" ); 
+        ini_set( 'SMTP', "mail.bigpond.com" );  
+        ini_set( 'smtp_port', 25 );
+
         $msg = '';
         $msgClass = '';
 
